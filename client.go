@@ -203,7 +203,7 @@ func (c *Client) videoDataByInnertube(ctx context.Context, id string) ([]byte, e
 		Context:        prepareInnertubeContext(*c.client),
 		ContentCheckOK: true,
 		RacyCheckOk:    true,
-		Params:         "CgIQBg==",
+		Params:         "8AEB",
 		PlaybackContext: &playbackContext{
 			ContentPlaybackContext: contentPlaybackContext{
 				// SignatureTimestamp: sts,
@@ -247,7 +247,7 @@ func prepareInnertubePlaylistData(ID string, continuation bool, clientInfo clien
 			Continuation:   ID,
 			ContentCheckOK: true,
 			RacyCheckOk:    true,
-			Params:         "CgIQBg==",
+			Params:         "8AEB",
 		}
 	}
 
@@ -256,7 +256,7 @@ func prepareInnertubePlaylistData(ID string, continuation bool, clientInfo clien
 		BrowseID:       "VL" + ID,
 		ContentCheckOK: true,
 		RacyCheckOk:    true,
-		Params:         "CgIQBg==",
+		Params:         "8AEB",
 	}
 }
 
@@ -526,8 +526,8 @@ func (c *Client) httpDo(req *http.Request) (*http.Response, error) {
 	}
 
 	req.AddCookie(&http.Cookie{
-		Name:   "CONSENT",
-		Value:  "YES+cb.20210328-17-p0.en+FX+" + c.consentID,
+		Name:   "SOCS",
+		Value:  "CAI",
 		Path:   "/",
 		Domain: ".youtube.com",
 	})
